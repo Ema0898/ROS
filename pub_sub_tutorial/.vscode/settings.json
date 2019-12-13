@@ -1,5 +1,9 @@
 {
     "files.associations": {
         "iosfwd": "cpp"
-    }
+    },
+    "python.autoComplete.extraPaths": [
+        "/home/ema0898/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages"
+    ]
 }

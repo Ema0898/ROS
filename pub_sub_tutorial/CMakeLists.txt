@@ -54,11 +54,10 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -135,6 +134,14 @@ add_dependencies(talker2 pub_sub_tutorial_generate_messages_cpp)
 add_executable(listener2 src/listener2.cpp)
 target_link_libraries(listener2 ${catkin_LIBRARIES})
 add_dependencies(listener2 pub_sub_tutorial_generate_messages_cpp)
+
+add_executable(server src/service/add_service.cpp)
+target_link_libraries(server ${catkin_LIBRARIES})
+add_dependencies(server pub_sub_tutorial_gencpp)
+
+add_executable(client src/service/add_client.cpp)
+target_link_libraries(client ${catkin_LIBRARIES})
+add_dependencies(client pub_sub_tutorial_gencpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
